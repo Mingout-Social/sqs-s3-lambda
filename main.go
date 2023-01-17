@@ -12,29 +12,17 @@ import (
 	"sqs_s3_lambda/lib"
 )
 
-type MessagePayload struct {
-	MessageId   string `json:"message_id"`
-	EventSource string `json:"event_source"`
-	Body        string `json:"body"`
-}
-
 func handler(ctx context.Context, event events.SQSEvent) error {
 	var err error
 
 	filesystem.InitS3Client()
 
 	for _, msg := range event.Records {
-		payload := MessagePayload{
-			MessageId:   msg.MessageId,
-			EventSource: msg.EventSource,
-			Body:        msg.Body,
-		}
-
-		file, _ := json.MarshalIndent(payload, "", "")
+		file, _ := json.MarshalIndent(msg.Body, "", "")
 
 		reader := bytes.NewReader(file)
 
-		_, err = lib.PutFile(payload.MessageId+".json", reader, reader.Size(), types.ObjectCannedACLPublicRead)
+		_, err = lib.PutFile(msg.MessageId+".json", reader, reader.Size(), types.ObjectCannedACLPublicRead)
 		log.Printf("Error in Uploading File: %v", err)
 	}
 
