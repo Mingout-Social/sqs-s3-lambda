@@ -3,12 +3,12 @@ package main
 import (
 	"bytes"
 	"context"
+	"github.com/Mingout-Social/mo-aws-lib/config/filesystem"
+	"github.com/Mingout-Social/mo-aws-lib/lib"
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/aws/aws-sdk-go-v2/service/s3/types"
 	"log"
-	"sqs_s3_lambda/config/filesystem"
-	"sqs_s3_lambda/lib"
 )
 
 func handler(ctx context.Context, event events.SQSEvent) error {

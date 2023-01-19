@@ -1,3 +1,5 @@
+github.com/Mingout-Social/mo-aws-lib v0.0.0-20230119063228-952f1b04196c h1:58JrqzJzIHP6OLI8iwJq6MdNDCDYIpUoFJoKUIi/VIw=
+github.com/Mingout-Social/mo-aws-lib v0.0.0-20230119063228-952f1b04196c/go.mod h1:SBEaEUa/0O4fWBpYFUv8uqMi5Ju6XFfi28TjyG+hBMM=
 github.com/aws/aws-lambda-go v1.37.0 h1:WXkQ/xhIcXZZ2P5ZBEw+bbAKeCEcb5NtiYpSwVVzIXg=
 github.com/aws/aws-lambda-go v1.37.0/go.mod h1:jwFe2KmMsHmffA1X2R09hH6lFzJQxzI8qK17ewzbQMM=
 github.com/aws/aws-sdk-go-v2 v1.17.3 h1:shN7NlnVzvDUgPQ+1rLMSxY8OWRNDRYtiqe0p/PgrhY=
